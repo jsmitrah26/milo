@@ -692,6 +692,12 @@
     margin: 0;
   }
 
+  .table.preserve-columns .section-row-title {
+    grid-column: auto !important;
+    grid-row: auto;
+    background-color: var(--color-gray-100);
+  }
+
   .table:not(.merch) .row .section-head-title,
   .table:not(.merch) .row .section-row-title {
     border-right: 1px solid var(--border-color);
@@ -701,10 +707,30 @@
     display: block;
   }
 
+  .table.preserve-columns .col-heading.col-1,
+  .table.preserve-columns .row-highlight .col-highlight.col-1 {
+    display: flex !important;
+  }
+
   .table .section-head .col:not(.section-head-title),
   .table:not(.merch) .col-heading.col-1,
   .table:not(.merch) .row-highlight .col-highlight.col-1:not(:only-child) {
     display: none;
+  }
+
+  .table.preserve-columns {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table.preserve-columns > .row {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(180px, 1fr);
+  }
+
+  .table.preserve-columns .col-2.col-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   .table:not(.merch) .row-highlight:has(> :only-child) {
