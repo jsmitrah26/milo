@@ -680,6 +680,7 @@ export default function init(el) {
   const columnCount = firstRow?.children.length || 0;
 
   if (columnCount <= 2) {
+    //add preserve-columns class to prevent columns from collapsing
     el.classList.add('preserve-columns');
   }
 
